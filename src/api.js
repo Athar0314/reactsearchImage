@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-const count = 1;
 function LoadImage() {
   const [image, setImage] = useState([]);
   useEffect(() => {
@@ -11,7 +10,7 @@ function LoadImage() {
       .then((data) => {
         setImage(data.data);
       });
-  }, [count]);
+  }, []);
   return image;
 }
 export { LoadImage };

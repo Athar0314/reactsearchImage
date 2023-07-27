@@ -1,10 +1,12 @@
 import React from "react";
 import { useState } from "react";
 import "./searchbar.css";
-import { LoadImage, SearchImage } from "../api";
+import { LoadImage } from "../api";
 import Image from "./imagelist";
 import axios from "axios";
 import Loading from "./loading";
+import SearchIcon from "@mui/icons-material/Search";
+import CameraIcon from "@mui/icons-material/Camera";
 
 export default function SearchPhotos() {
   const data = LoadImage();
@@ -29,19 +31,19 @@ export default function SearchPhotos() {
     <>
       <form className="form" onSubmit={searchPhotos}>
         <label className="label" htmlFor="query">
-          {" "}
-          📷
+          <CameraIcon />
         </label>
         <input
           type="text"
           name="query"
           className="input"
-          placeholder={`Search....`}
+          placeholder={`Search Images...`}
           value={query}
           onChange={(e) => setQuery(e.target.value)}
+          required
         />
         <button type="submit" className="button">
-          Search
+          <SearchIcon />
         </button>
       </form>
       {loading ? (
