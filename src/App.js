@@ -1,4 +1,5 @@
 import "./App.css";
+import Footer from "./component/Footer";
 import SearchPhotos from "./component/searchbar";
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
         <h1 className="title">React Photo Search</h1>
         <SearchPhotos />
       </div>
+      <Footer />
     </div>
   );
 }
