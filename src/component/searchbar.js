@@ -53,26 +53,26 @@ export default function SearchPhotos() {
           {" "}
           {searchData.length > 0 ? (
             <div className="card-list">
-              {searchData.map((img) => (
+              {searchData.map((img, key) => (
                 <div className="card">
                   <Image
                     className="card--image"
                     src={img.urls.small_s3}
                     img={img}
-                    key={img.id}
+                    key={key}
                   />
                 </div>
               ))}
             </div>
           ) : (
             <div className="card-list">
-              {data.map((img) => (
+              {data.map((img, key) => (
                 <div className="card">
                   <Image
                     className="card--image"
                     src={img.urls.small_s3}
                     img={img}
-                    key={img.id}
+                    key={key}
                   />
                 </div>
               ))}
